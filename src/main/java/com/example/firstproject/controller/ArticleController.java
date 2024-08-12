@@ -1,7 +1,7 @@
 package com.example.firstproject.controller;
 
-import com.example.firstproject.dto.ArticleForm;
 import com.example.firstproject.entity.Article;
+import com.example.firstproject.dto.ArticleForm;
 import com.example.firstproject.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +29,7 @@ public class ArticleController {
 
         //2.리파지터리로 엔티티를 DB에 저장
         Article saved = articleRepository.save(article);
+
         System.out.println(saved.toString());
         return "";
 
