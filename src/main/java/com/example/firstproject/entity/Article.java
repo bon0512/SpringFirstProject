@@ -5,8 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
+@ToString
+@NoArgsConstructor
+@Getter
 public class Article {
 
     @Id
@@ -19,9 +25,8 @@ public class Article {
     @Column
     private String content;
 
-    // 기본 생성자 (JPA가 필요로 함)
-    protected Article() {
-    }
+    // 기본 생성자 (JPA가 필요로 함) @NoArgsConstructor로 대체함
+
 
     // 모든 필드를 초기화하는 생성자
     public Article(Long id, String title, String content) {
@@ -30,12 +35,8 @@ public class Article {
         this.content = content;
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
+
+    public Long getId() {
+        return id;
     }
 }

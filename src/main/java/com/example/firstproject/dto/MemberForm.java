@@ -1,9 +1,11 @@
 package com.example.firstproject.dto;
 
 import com.example.firstproject.entity.Member;
+import lombok.ToString;
 
 import java.beans.ConstructorProperties;
 
+@ToString
 public class MemberForm {
 
     private String email;
@@ -15,13 +17,7 @@ public class MemberForm {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "MemberFrom{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+
 
     public Member toEntity() {
         return new Member(null,email,password);
