@@ -4,22 +4,21 @@
     <thead>
     <tr>
         <th scope="col">Id</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
     </tr>
     </thead>
-<tbody>
-
-    {{#articleList}}
-    <tr>
-        <th>{{id}}</th>
-        <td><a href="/articles/{{id}}">{{title}}</a></td>
-        <td>{{content}}</td>
-    </tr>
+    <tbody>
+    {{#members}}
+        <tr>
+            <th>{{id}}</th>
+            <td><a href="/members/{{id}}">{{email}}</a></td>
+            <td>{{password}}</td>
+        </tr>
+    {{/members}}
     </tbody>
-    {{/articleList}}
 </table>
 
-<a href="/members/new">New Article</a>
+<a href="/members/new">회원가입</a>
 
 {{>layouts/footer}}
