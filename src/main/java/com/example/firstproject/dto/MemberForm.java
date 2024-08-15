@@ -7,12 +7,13 @@ import java.beans.ConstructorProperties;
 
 @ToString
 public class MemberForm {
-
+    private Long id;
     private String email;
     private String password;
 
-    @ConstructorProperties({"email","password"})
-    public MemberForm(String email, String password) {
+    @ConstructorProperties({"id","email","password"})
+    public MemberForm(Long id, String email, String password) {
+        this.id = id;
         this.email = email;
         this.password = password;
     }
@@ -20,7 +21,7 @@ public class MemberForm {
 
 
     public Member toEntity() {
-        return new Member(null,email,password);
+        return new Member(id,email,password);
     }
 
 }
