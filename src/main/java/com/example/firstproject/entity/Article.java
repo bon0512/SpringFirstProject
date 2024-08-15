@@ -16,7 +16,8 @@ import lombok.ToString;
 public class Article {
 
     @Id
-    @GeneratedValue // ID 생성 전략 명시 (필수는 아니지만 권장)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // ID 생성 전략 명시 (필수는 아니지만 권장),나는 자동으로 코드를 수정해 오류를 잡아줌
+
     private Long id;
 
     @Column
