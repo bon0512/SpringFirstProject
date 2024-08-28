@@ -1,0 +1,37 @@
+<div class="card" id = "comments-new">
+    <div class="card-body">
+
+        <!--댓글 작성 폼 -->
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">닉네임</label>
+                <input type="text" class="form-control" id="new-comment-nickname">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">댓글 내용</label>
+                <textarea type="text" class="form-control" rows="3" id="new-comment-body"></textarea>
+            </div>
+            {{#articles}}
+                <input type="hidden" id ="new-comment-article-id" value = "{{id}}">
+            {{/articles}}
+            <button type="button" class="btn btn-primary" id = "comment-create-btn">댓글 작성</button>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    {
+       const commentCreateBtn= document.querySelector("#comment-create-btn")
+       commentCreateBtn.addEventListener("click",function(){
+
+           const comment = {
+               nickname : document.querySelector("#new-comment-nickname").value,
+               body: document.querySelector("#new-comment-body").value,
+               articleId : document.querySelector("#new-comment-article-id").value
+           };
+
+           console.log(comment);
+       });
+    }
+</script>
